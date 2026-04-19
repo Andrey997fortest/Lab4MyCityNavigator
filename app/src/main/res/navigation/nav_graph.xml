@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="ru.istu.lab4mycitynavigator.HomeFragment"
+        android:label="@string/menu_home" />
+
+    <fragment
+        android:id="@+id/highlightsFragment"
+        android:name="ru.istu.lab4mycitynavigator.HighlightsFragment"
+        android:label="@string/menu_highlights">
+        <action
+            android:id="@+id/action_highlightsFragment_to_recommendationDetailFragment"
+            app:destination="@id/recommendationDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="ru.istu.lab4mycitynavigator.AboutFragment"
+        android:label="@string/menu_about" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="ru.istu.lab4mycitynavigator.SettingsFragment"
+        android:label="@string/drawer_settings" />
+
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="ru.istu.lab4mycitynavigator.CategoryFragment"
+        android:label="@string/category_screen_title">
+        <argument android:name="categoryId" app:argType="integer" />
+        <action
+            android:id="@+id/action_categoryFragment_to_recommendationDetailFragment"
+            app:destination="@id/recommendationDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/recommendationDetailFragment"
+        android:name="ru.istu.lab4mycitynavigator.RecommendationDetailFragment"
+        android:label="@string/category_screen_title">
+        <argument android:name="categoryId" app:argType="integer" />
+        <argument android:name="recommendationId" app:argType="integer" />
+    </fragment>
+</navigation>
